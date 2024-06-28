@@ -23,17 +23,24 @@ __HELP_MESSAGE = [[
 
 ************* HELP MESSAGE ***********
 *                                    *
-*       CIRCLE = PAUSE               *
-*       CROSS = SELECT               *
-*       UP = MOVE UP                 *
-*       DOWN = MOVE DOWN             *
-*       L = SCREEN OFF               *
-*       R = SCREEN ON                *
-*       WLAN SWITCH -> = LOOP ON     *
-*       WLAN SWITCH <- = LOOP OFF    *
+*       PAUSE = CIRCLE               *
+*       SELECT = CROSS               *
+*       MOVE UP = UP                 *
+*       MOVE DOWN = DOWN             *
+*       SCREEN OFF = L               *
+*       SCREEN ON = R                *
+*       LOOP ON = WLAN SWITCH ->     *
+*       LOOP OFF = WLAN SWITCH <-    *
+*       SQUARE = AUTOPLAY ON/OFF     *
 *                                    *
 **************************************
 
+]]
+
+__TOGGLE_LOOP_WARNING = [[
+================================================
+** DISABLE LOOP MODE BEFORE ENABLING AUTOPLAY **
+================================================
 ]]
 
 function readSongsFromFolder(songsList)
@@ -53,7 +60,14 @@ function checkForSongs()
   end
 end
 
+local function sleep(seconds)
+    local start = os.time()
+    repeat until os.time() > start + seconds
+end
+
+
 return {
   checkForSongs = checkForSongs,
-  removeExtention = removeExtention
+  removeExtention = removeExtention,
+  sleep = sleep
 }
