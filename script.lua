@@ -235,25 +235,22 @@ while true do
 
   -- Print if headphone are connected
   current_h_state = hw.headphone()
-  if current_h_state then
-    if old_h_state == current_h_state then
-      -- nothing
-    else
-      screen.txtcolor(color.black)
-      screen.txtbgcolor(color.yellow)
-      screen.consoleprint(__H_CONNECTED)
-      screen.flip()
-      utils.sleep(1.6)
-    end
-    old_h_state = current_h_state
+  screen.consolexy(50, 5)
+  screen.txtcolor(color.white)
+  screen.txtbgcolor(color.magenta)
+  if current_h_state and false then
+    screen.consoleprint(":: HEADPHONE ::")
+  else
+    screen.consoleprint(":: STREO ::")
   end
 
   -- Print Volume percentage
+  vp = hw.volume()
   screen.consolexy(50, 3)
   screen.txtcolor(color.white)
   screen.txtbgcolor(color.magenta)
-  if current_h_state < 30 then 
-    screen.consoleprint(string.format(":: VOL %s%s ::", current_h_state, "%"))
+  if vp < 30 then 
+    screen.consoleprint(string.format(":: VOL %s%s ::", vp, "%"))
   else
     screen.consoleprint(":: VOL MAX ::")
   end
