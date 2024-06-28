@@ -239,7 +239,10 @@ while true do
     if old_h_state == current_h_state then
       -- nothing
     else
-      screen.consoleprint("HEADPHONES CONNECTED")
+      screen.txtcolor(color.black)
+      screen.txtbgcolor(color.yellow)
+      screen.consoleprint(__H_CONNECTED)
+      screen.flip()
       utils.sleep(1.6)
     end
     old_h_state = current_h_state

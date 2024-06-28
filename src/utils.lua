@@ -43,6 +43,12 @@ __TOGGLE_LOOP_WARNING = [[
 ================================================
 ]]
 
+__H_CONNECTED = [[
+%%%%%%%%%%%%%%%%%%%%%
+%HEADPHONE CONNECTED%
+%%%%%%%%%%%%%%%%%%%%%
+]]
+
 function readSongsFromFolder(songsList)
 
 end
