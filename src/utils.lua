@@ -71,9 +71,19 @@ local function sleep(seconds)
     repeat until os.time() > start + seconds
 end
 
+local function normal() 
+  screen.txtbgcolor(color.black)
+  screen.txtcolor(color.white)
+end
+local function rev() 
+  screen.txtbgcolor(color.white)
+  screen.txtcolor(color.black)
+end
 
 return {
   checkForSongs = checkForSongs,
   removeExtention = removeExtention,
-  sleep = sleep
+  sleep = sleep,
+  rev = rev,
+  normal = normal
 }

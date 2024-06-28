@@ -10,16 +10,6 @@ local songs = files.listfiles(__SONGS_DIR)
 -- Load color plette
 color.loadpalette()
 
--- TODO: move on src/utils.lua
-local function normal() 
-  screen.txtbgcolor(color.black)
-  screen.txtcolor(color.white)
-end
-local function rev() 
-  screen.txtbgcolor(color.white)
-  screen.txtcolor(color.black)
-end
-
 -- Check if there are songs in /songs
 checkForSongs()
 
@@ -66,6 +56,17 @@ while true do
     if buttons.held.r then
       isScreenOn = true
     end
+    -- Copy for play in background 
+    if isStarted and not isPaused and not sound.playing(song) and autoPlay then
+      if current_selection == #song then
+        current_selection = 0
+      end
+      current_selection = current_selection + 1
+      song = sound.load(string.format("songs/%s", songs[current_selection].name))
+      sound.vol(song, 100)
+      sound.play(song, 1)
+    end
+
     utils.sleep(1)
   end
 
@@ -73,18 +74,28 @@ while true do
   screen.clear(color.black)
 
   -- Print battery percentage
-  	
+
+  batt_perc = batt.lifepercent()
+
+  if batt_perc >= 50 then
+    bat = "///"
+  elseif batt_perc >= 25 and batt_perc < 50 then
+    bat = "//"
+  else
+    bat = "/"
+  end
+
   screen.txtbgcolor(color.magenta)
   screen.txtcolor(color.white)
   screen.consolexy(50, 1)
-  screen.consoleprint(string.format(":: BAT %d%s ::", batt.lifepercent(), "%"))
-  normal()
+  screen.consoleprint(string.format(":: BAT %s ::", bat, "%"))
+  utils.normal()
 
   -- Set position on top-left corner
   screen.consolexy(0, 0)
 
   -- Set color to normal [bg = black, txt = white]
-  normal()
+  utils.normal()
   
   -- Print ascii art + version + help message
   screen.consoleprint(__ASCII_ART)
@@ -115,7 +126,7 @@ while true do
   end
 
   -- Set color to normal and print 3 song
-  normal()
+  utils.normal()
 
   local c = min
   local k = 1
@@ -123,17 +134,17 @@ while true do
     
     -- Control Limit
 
-    normal()
+    utils.normal()
     screen.consolexy(1, 13+k)
     if c == current_selection then
       screen.consoleprint("> ")
-      rev()
+      utils.rev()
     else
       screen.consoleprint("  ")
-      normal()
+      utils.normal()
     end
     screen.consoleprint(string.format("%s", songs[i].name))
-    normal()
+    utils.normal()
     if i == current_selection then
       screen.consoleprint(" <")
     end
@@ -266,7 +277,10 @@ while true do
   -- Refresh screen
   screen.flip()
 
-  if isStarted and not isPaused and not sound.playing(song) and autoPlay and current_selection ~= #songs then
+  if isStarted and not isPaused and not sound.playing(song) and autoPlay then
+    if current_selection == #songs then
+      current_selection = 0
+    end
     current_selection = current_selection + 1
     song = sound.load(string.format("songs/%s", songs[current_selection].name))
     sound.vol(song, 100)
