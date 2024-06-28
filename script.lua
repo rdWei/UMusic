@@ -77,18 +77,11 @@ while true do
 
   batt_perc = batt.lifepercent()
 
-  if batt_perc >= 50 then
-    bat = "///"
-  elseif batt_perc >= 25 and batt_perc < 50 then
-    bat = "//"
-  else
-    bat = "/"
-  end
 
   screen.txtbgcolor(color.magenta)
   screen.txtcolor(color.white)
   screen.consolexy(50, 1)
-  screen.consoleprint(string.format(":: BAT %s ::", bat, "%"))
+  screen.consoleprint(string.format(":: BAT %s%s ::", batt_perc, "%"))
   utils.normal()
 
   -- Set position on top-left corner
@@ -150,6 +143,19 @@ while true do
     end
     k = k + 1
     c = c + 1
+  end
+
+  -- Print autoplay
+  if autoPlay then
+    screen.consolexy(18, 11)
+    screen.txtcolor(color.white)  
+    screen.txtbgcolor(color.navy)
+    screen.consoleprint(":: AUTOPLAY: ON ::")
+  else
+    screen.consolexy(18, 11)
+    screen.txtcolor(color.white)  
+    screen.txtbgcolor(color.navy)
+    screen.consoleprint(":: AUTOPLAY: OFF ::")
   end
 
 
@@ -229,19 +235,6 @@ while true do
       sound.loop(song)
       isLooping = false
     end
-  end
-
-  -- Print autoplay
-  if autoPlay then
-    screen.consolexy(18, 11)
-    screen.txtcolor(color.white)  
-    screen.txtbgcolor(color.navy)
-    screen.consoleprint(":: AUTOPLAY: ON ::")
-  else
-    screen.consolexy(18, 11)
-    screen.txtcolor(color.white)  
-    screen.txtbgcolor(color.navy)
-    screen.consoleprint(":: AUTOPLAY: OFF ::")
   end
 
   -- Print if headphone are connected
