@@ -119,7 +119,7 @@ while true do
   -- Print if song is paused or not
   
   if isPaused then
-    screen.consolexy(50, 5)
+    screen.consolexy(50, 7)
     screen.txtbgcolor(color.navy)
     screen.txtcolor(color.white)
     screen.consoleprint(":: SONG PAUSED ::")
