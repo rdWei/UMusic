@@ -38,8 +38,12 @@ song = sound.load(string.format("songs/%s", songs[1].name))
 -- Declare pause var
 local isPaused = false
 
+  max = #songs
+
   local min = 1
-  local max = 16
+  if #songs > 15 then
+    max = 16
+  end
 
   local oldmax = max
 
