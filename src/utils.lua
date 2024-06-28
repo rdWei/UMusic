@@ -28,7 +28,7 @@ __HELP_MESSAGE = [[
 *   MOVE UP       : UP               *
 *   MOVE DOWN     : DOWN             *
 *   SCREEN OFF    : L                *
-*   SCREEN ON     : R                *
+*   SCREEN ON     : HOLD 1s R        *
 *   LOOP ON       : WLAN SWITCH ->   *
 *   LOOP OFF      : WLAN SWITCH <-   *
 *   SQUARE        : AUTOPLAY ON/OFF  *
