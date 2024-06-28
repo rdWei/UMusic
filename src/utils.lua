@@ -48,7 +48,7 @@ end
 function checkForSongs()
 
   if #files.listfiles(__SONGS_DIR) == 0 then
-    os.message("No music found, please add music to songs folder.")
+    os.message("No song found, please add at least one song in /songs folder")
     os.exit()
   end
 end
