@@ -58,7 +58,7 @@ while true do
     end
     -- Copy for play in background 
     if isStarted and not isPaused and not sound.playing(song) and autoPlay then
-      if current_selection == #song then
+      if current_selection == #songs then
         current_selection = 0
       end
       current_selection = current_selection + 1
@@ -249,10 +249,10 @@ while true do
   screen.consolexy(50, 5)
   screen.txtcolor(color.white)
   screen.txtbgcolor(color.magenta)
-  if current_h_state and false then
+  if current_h_state  == 1 then
     screen.consoleprint(":: HEADPHONE ::")
   else
-    screen.consoleprint(":: STREO ::")
+    screen.consoleprint(":: STEREO ::")
   end
 
   -- Print Volume percentage
