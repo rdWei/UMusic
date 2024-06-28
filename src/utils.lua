@@ -23,15 +23,15 @@ __HELP_MESSAGE = [[
 
 ************* HELP MESSAGE ***********
 *                                    *
-*       PAUSE = CIRCLE               *
-*       SELECT = CROSS               *
-*       MOVE UP = UP                 *
-*       MOVE DOWN = DOWN             *
-*       SCREEN OFF = L               *
-*       SCREEN ON = R                *
-*       LOOP ON = WLAN SWITCH ->     *
-*       LOOP OFF = WLAN SWITCH <-    *
-*       SQUARE = AUTOPLAY ON/OFF     *
+*   PAUSE         : CIRCLE           *
+*   SELECT        : CROSS            *
+*   MOVE UP       : UP               *
+*   MOVE DOWN     : DOWN             *
+*   SCREEN OFF    : L                *
+*   SCREEN ON     : R                *
+*   LOOP ON       : WLAN SWITCH ->   *
+*   LOOP OFF      : WLAN SWITCH <-   *
+*   SQUARE        : AUTOPLAY ON/OFF  *
 *                                    *
 **************************************
 

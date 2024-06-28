@@ -267,7 +267,7 @@ while true do
   end
   -- Print help message
   if help_message then
-    screen.consolexy(1, 1)
+    screen.consolexy(0, 0)
     screen.txtcolor(color.black)  
     screen.txtbgcolor(color.yellow)
     screen.consoleprint(__HELP_MESSAGE)
