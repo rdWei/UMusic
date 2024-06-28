@@ -269,7 +269,7 @@ while true do
   -- Refresh screen
   screen.flip()
 
-  if isStarted and not isPaused and not sound.playing(song) and autoPlay then
+  if isStarted and not isPaused and not sound.playing(song) and autoPlay and current_selection ~= #songs then
     current_selection = current_selection + 1
     song = sound.load(string.format("songs/%s", songs[current_selection].name))
     sound.vol(song, 100)
