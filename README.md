@@ -10,3 +10,10 @@
 A feature-rich, lightweight PSP music player.
  </pre>
 </div>
+
+# UMusic  
+
+<div style="display: inline;">
+    <img src="https://img.shields.io/badge/written in-lua-2C3333" alt=""/>
+    <img src="https://img.shields.io/badge/version-v0.1.0-2C3333" alt=""/>
+</div>
