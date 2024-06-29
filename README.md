@@ -9,7 +9,6 @@
 <br>
 A feature-rich, lightweight PSP music player.
  </pre>
-<img src="presentation.png">
 </div>
 
 # UMusic  
@@ -20,6 +19,11 @@ A feature-rich, lightweight PSP music player.
 </div>
 
 <br>
+
+<div align="center">
+<img src="presentation.png">
+</div>
+
 
 UMusic is a lightweight music player for the PSP, completely developed in Lua. It offers a variety of features, such as the ability to listen to music with the screen off, autoplay, looping, and more.
 
