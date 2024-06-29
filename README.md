@@ -27,13 +27,13 @@ UMusic is a lightweight music player for the PSP, completely developed in Lua. I
 
 ---
 
-# Installation
+## Installation
 
 - Download and extract [this](https://github.com/rdWei/UMusic/releases/download/v0.1.0/UMusic-main.zip) zip file.
 - Put the "UMusic-main" folder inside `PSP/GAME/`.
 - If you want to add music, place it in `UMusic-main/songs`.
 
-# Usage
+## Usage
 
 - **Pause**: CIRCLE
 - **Select**: CROSS
@@ -44,3 +44,5 @@ UMusic is a lightweight music player for the PSP, completely developed in Lua. I
 - **Loop On**: WLAN SWITCH ->
 - **Loop Off**: WLAN SWITCH <-
 - **Autoplay On/Off**: SQUARE
+
+>Feel free to improve this project!
