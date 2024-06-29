@@ -7,6 +7,6 @@
  | |__| | |  | | |_| \__ \ | (__ 
   \____/|_|  |_|\__,_|___/_|\___|
 <br>
-An Easy-to-Use Discord-Based Backdoor Tool
+A feature-rich, lightweight PSP music player.
  </pre>
 </div>
