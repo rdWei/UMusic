@@ -9,6 +9,7 @@
 <br>
 A feature-rich, lightweight PSP music player.
  </pre>
+<img src="images/presentation.png">
 </div>
 
 # UMusic  
